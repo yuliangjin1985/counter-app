@@ -9,7 +9,7 @@
 
 # Lesson 3: first module
 ## Steps
- + create a folder: component
+ + create a folder: components
  + create counter.jsx file
  + render counter instead of original App, modify index.js
  ```
@@ -20,4 +20,31 @@
  ```
 # Lesson 4: Specifying Children
 ## Steps
- + create a folder: component
+```
+class Counter extends Component {
+    state = {  }
+    render() { 
+        return <div><h1>Hello world!</h1><button>Increment</button></div>;
+    }
+}
+```
+# Lesson 5: Embedding Expressions 
+## {valid js expressing} and object destructuring
+Use valid js expression in jsx and practice object destructuring.
+```
+class Counter extends Component {
+    state = { 
+        count: 0
+     }
+    render() { 
+        return <div>
+            <span>{this.formatCount()}</span>//We can add any valid javascript expressions
+            <button>Increment</button></div>;
+    }
+
+    formatCount() {
+        const {count} = this.state;//Use object destructuring
+        return count === 0 ? <h1>Zero</h1> : count;
+    }
+}
+```

@@ -1,9 +1,18 @@
 import React, { Component } from 'react';
 
 class Counter extends Component {
-    state = {  }
+    state = { 
+        count: 0
+     }
     render() { 
-        return <h1>Hello world!</h1>;
+        return <div>
+            <span>{this.formatCount()}</span>//We can add any valid javascript expressions
+            <button>Increment</button></div>;
+    }
+
+    formatCount() {
+        const {count} = this.state;//Use object destructuring
+        return count === 0 ? <h1>Zero</h1> : count;
     }
 }
  
