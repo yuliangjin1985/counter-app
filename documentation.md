@@ -202,3 +202,34 @@ In react, we have to explicitlly tell react what has changed, and the parameter 
 # Lesson 13: What exactly happens when state changed
 ## setState(object)
 When `setState()` is called, it tells react that the state of this component is going to change. React then schedules a call to `render()` method. `render()` will be called asychronizly. When the state changed, and `render()` will return a new react element, a new virtual dom is created and react will compare it with the old one, and find the `<span>` element has changed, then react will update the dom only for that particular element.
+# Lesson 14: Passing Event Arguments
+## With a helper method
+Some times we need to bind particular data to an event, like a product. Here for example, we create another helper method and call the original one with parameter. It's cubersome.
+
+```
+    render() { 
+        return <div>
+            <button onClick={this.doHandleIncrement} className="btn btn-secondary btn-sm">Increment</button>
+        </div>
+    }
+
+    doHandleIncrement = () => this.handleIncrement({id: 1});//Pass a variable
+
+    handleIncrement = (id) => {
+        console.log(id);
+        this.setState({ count: this.state.count + 1});
+    }
+```
+## Use array function and inline function without a helper method
+```
+    render() { 
+        return <div>
+            <button onClick={() => this.handleIncrement({id: 1})} className="btn btn-secondary btn-sm">Increment</button>
+        </div>
+    }
+
+    handleIncrement = (id) => {
+        console.log(id);
+        this.setState({ count: this.state.count + 1});
+    }
+```
