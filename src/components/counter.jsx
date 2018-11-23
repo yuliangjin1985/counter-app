@@ -22,8 +22,8 @@ class Counter extends Component {
         </div>
     }
 
-    handleIncrement() {
-        console.log("Increment event", this);//Here this is undifined
+    handleIncrement = () => {
+        console.log("Increment event", this);
     }
 
     renderTags() {

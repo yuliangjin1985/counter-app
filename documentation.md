@@ -169,3 +169,23 @@ Because it's an event, we can do like this: `onClick={this.someMethod()`. It has
         console.log("Increment event", this);//Here this is undifined
     }
 ```
+# Lesson 11: Binding Event Handlers
+## Using constructor to bind the standalone function with an object
+The bind() method will return a new method in which `this` would always be binded to the target object, `this.handleIncrement.bind(this)`, through constructer, and after `super()`. So we need to resign the new method to the original method veriable.
+```
+     constructor() {
+         super();
+         this.handleIncrement = this.handleIncrement.bind(this);
+     }
+
+    handleIncrement() {
+        console.log("Increment event", this);//Here this is undifined, because this is a stand alone method
+    }
+```
+## Useing arrow function
+Instead of using constructor, using arrow function, because arrow functions don't rebind `this`, it inherits it.
+```
+    handleIncrement = () => {
+        console.log("Increment event", this);
+    }
+```
