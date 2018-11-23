@@ -15,11 +15,15 @@ class Counter extends Component {
     render() { 
         return <div>
             <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
-            <button className="btn btn-secondary btn-sm">Increment</button>
+            <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
             {/* logic && between un boolean values, like boolean && string, if all operand is true, the result is the last operand */}
             {this.state.tags.length === 0 && <div>Please create a new tag!</div>}
             {this.renderTags()} 
         </div>
+    }
+
+    handleIncrement() {
+        console.log("Increment event", this);//Here this is undifined
     }
 
     renderTags() {

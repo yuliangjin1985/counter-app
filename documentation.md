@@ -155,3 +155,17 @@ logic && between un boolean values, like boolean && string, if all operand is tr
             {this.state.tags.length === 0 && <div>Please create a new tag!</div>}
         </div>
 ```
+# Lesson 10: Handling Events
+## react event properties: onClick={this.someMethod}
+Because it's an event, we can do like this: `onClick={this.someMethod()`. It has to be like `onClick={this.someMethod}`.
+```
+    render() { 
+        return <div>
+            <button onClick={this.handleIncrement} className="btn btn-secondary btn-sm">Increment</button>
+        </div>
+    }
+
+    handleIncrement() {
+        console.log("Increment event", this);//Here this is undifined
+    }
+```
