@@ -192,9 +192,13 @@ Instead of using constructor, using arrow function, because arrow functions don'
 ```
 # Lesson 12: Updating the state
 ## setState(object)
+The property name is `count`, value is `this.state.count + 1`. This property will merge with this.state.
 In react, we have to explicitlly tell react what has changed, and the parameter is an object.
 ```
     handleIncrement = () => {
         this.setState({ count: this.state.count + 1});
     }
 ```
+# Lesson 13: What exactly happens when state changed
+## setState(object)
+When `setState()` is called, it tells react that the state of this component is going to change. React then schedules a call to `render()` method. `render()` will be called asychronizly. When the state changed, and `render()` will return a new react element, a new virtual dom is created and react will compare it with the old one, and find the `<span>` element has changed, then react will update the dom only for that particular element.
