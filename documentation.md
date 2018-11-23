@@ -171,6 +171,7 @@ Because it's an event, we can do like this: `onClick={this.someMethod()`. It has
 ```
 # Lesson 11: Binding Event Handlers
 ## Using constructor to bind the standalone function with an object
+**In the event handler, it has to be able to access the this objet.**
 The bind() method will return a new method in which `this` would always be binded to the target object, `this.handleIncrement.bind(this)`, through constructer, and after `super()`. So we need to resign the new method to the original method veriable.
 ```
      constructor() {
@@ -187,5 +188,13 @@ Instead of using constructor, using arrow function, because arrow functions don'
 ```
     handleIncrement = () => {
         console.log("Increment event", this);
+    }
+```
+# Lesson 12: Updating the state
+## setState(object)
+In react, we have to explicitlly tell react what has changed, and the parameter is an object.
+```
+    handleIncrement = () => {
+        this.setState({ count: this.state.count + 1});
     }
 ```
