@@ -50,7 +50,7 @@ class Counter extends Component {
 ```
 
 # Lesson 6: Setting Attributes
-## 
+## Attributes for react tags
 `className` from bootstrape, and `fontSize` attribute, and add `img` tag
 ```
 class Counter extends Component {
@@ -75,4 +75,34 @@ class Counter extends Component {
         return count === 0 ? <h1>Zero</h1> : count;
     }
 }
+```
+# Lesson 7: Rendering Classes Dynamically
+## Rendering Classes Dynamically and extract to method
+```
+    render() { 
+        let classes = this.getBadgeClasses();
+        return <div>
+            <span style={this.styles} className={classes}>{this.formatCount()}</span>
+            <button className="btn btn-secondary btn-sm">Increment</button></div>;
+    }
+
+    getBadgeClasses() {
+        let classes = "badge m-2 badge-";
+        classes += this.state.count === 0 ? "warning" : "primary";
+        return classes;
+    }
+```
+## Call method directly
+```
+    render() { 
+        return <div>
+            <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
+            <button className="btn btn-secondary btn-sm">Increment</button></div>;
+    }
+
+    getBadgeClasses() {
+        let classes = "badge m-2 badge-";
+        classes += this.state.count === 0 ? "warning" : "primary";
+        return classes;
+    }
 ```
