@@ -2,12 +2,19 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
     state = { 
-        count: 0
+        count: 0,
+        imageUrl: 'https://picsum.photos/200'
+     }
+
+     styles = {
+         fontSize: 10,//react will automatically convert 10 to 10px;
+         fontWeight: 'bold'
      }
     render() { 
         return <div>
-            <span>{this.formatCount()}</span>//We can add any valid javascript expressions
-            <button>Increment</button></div>;
+            <img src={this.state.imageUrl}></img>
+            <span style={this.styles} className="badge badge-primary m-2">{this.formatCount()}</span>
+            <button className="btn btn-secondary btn-sm">Increment</button></div>;
     }
 
     formatCount() {
