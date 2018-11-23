@@ -3,7 +3,8 @@ import React, { Component } from 'react';
 class Counter extends Component {
     state = { 
         count: 5,
-        tags: ['tag1', 'tag2', 'tag3'],
+        tags: [],
+        // tags: ['tag1', 'tag2', 'tag3'],
         imageUrl: 'https://picsum.photos/200'
      }
 
@@ -15,10 +16,15 @@ class Counter extends Component {
         return <div>
             <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
             <button className="btn btn-secondary btn-sm">Increment</button>
-            <ul>
-                {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
-            </ul>
+            {/* logic && between un boolean values, like boolean && string, if all operand is true, the result is the last operand */}
+            {this.state.tags.length === 0 && <div>Please create a new tag!</div>}
+            {this.renderTags()} 
         </div>
+    }
+
+    renderTags() {
+        if(this.state.tags.length === 0) return <p>There are no tags.</p>
+        return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>;
     }
 
     getBadgeClasses() {

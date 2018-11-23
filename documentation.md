@@ -134,3 +134,24 @@ In order to fix the unique warning, add key temperarily.
     {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
 </ul>
 ```
+# Lesson 9: Conditional Rendering
+## conditional rendering tags
+```
+renderTags() {
+        if(this.state.tags.length === 0) return <p>There are no tags.</p>
+        return <ul>{this.state.tags.map(tag => <li key={tag}>{tag}</li>)}</ul>;
+    }
+```
+```
+        return <div>
+            {this.state.tags.length === 0 && <div>Please create a new tag!</div>}
+            {this.renderTags()} 
+        </div>
+```
+## javascript logical and
+logic && between un boolean values, like boolean && string, if all operand is true, the result is the last operand
+```
+        return <div>
+            {this.state.tags.length === 0 && <div>Please create a new tag!</div>}
+        </div>
+```
