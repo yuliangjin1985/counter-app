@@ -106,3 +106,31 @@ class Counter extends Component {
         return classes;
     }
 ```
+# Lesson 8: Rendering Lists
+## map and unique key
+When use map to render a list, there should be a key attribute, to make it reactive.
+Warning: Each child in an array or iterator should have a unique "key" prop.
+```
+state = { 
+        count: 5,
+        tags: ['tag1', 'tag2', 'tag3'],
+        imageUrl: 'https://picsum.photos/200'
+     }
+
+     styles = {
+         fontSize: 50,//react will automatically convert 10 to 10px;
+         fontWeight: 'bold'
+     }
+    render() { 
+        return <div>
+                {this.state.tags.map(tag => <li>{tag}</li>)}
+            </ul>
+        </div>
+    }
+```
+In order to fix the unique warning, add key temperarily.
+```
+<ul>
+    {this.state.tags.map(tag => <li key={tag}>{tag}</li>)}
+</ul>
+```
