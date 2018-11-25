@@ -220,7 +220,7 @@ Some times we need to bind particular data to an event, like a product. Here for
         this.setState({ count: this.state.count + 1});
     }
 ```
-## Use array function and inline function without a helper method
+## Use arrow function and inline function without a helper method
 ```
     render() { 
         return <div>
