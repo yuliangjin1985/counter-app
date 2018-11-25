@@ -35,3 +35,31 @@ Bellow way of rendering an array is wrong, `Expected an assignment or function c
            </div>
     }
 ```
+# lesson 2 props in react
+## Sub component
+For subcomponent, we can use `this.props.value` to initialize the state.
+```
+class Counter extends Component {
+    state = {
+        count: this.props.value
+     }
+
+    render() { 
+        console.log("Props: ", this.props);
+        return <div>
+            <span style={this.styles} className={this.getBadgeClasses()}>{this.formatCount()}</span>
+            <button onClick={() => this.handleIncrement({id: 1})} className="btn btn-secondary btn-sm">Increment</button>
+        </div>
+    }
+}
+```
+## Parent component
+We can set key-value pairs as props for sub components:
+```
+    render() { 
+        return <div>
+            {this.state.counters.map(count => 
+                <Counter key={count.id} value={count.count} selected={true}/>)}
+           </div>
+    }
+```
