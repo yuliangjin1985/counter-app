@@ -164,3 +164,13 @@ To be:
     }
 ```
 When I do this, I made a mistake that I thought the counter object will also include the event `handleDelete`. So I can't actually access this event through `counter` props because event `handleDelete` resides in `Counters` component.
+# lesson 9 Single Source of Truth
+## Local state
+The component `Counter` has a local state, when click on the increment button, it can be upadated and show the updated value in the view. But when we add a `reset` function from the component `Counters`, in the component `Counter` the value is not updated in the view, eventhough its props was updated. Because, `state` in `Counter` is still using the lacal value. `state = { count: this.props.counter.count}` is only called once when initializing the `Counter` object. The reset function could not make it initialize again.
+```
+class Counter extends Component {
+    state = {
+        count: this.props.counter.count
+     }
+}
+```
