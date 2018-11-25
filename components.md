@@ -115,3 +115,52 @@ When setting the event value in the props, the name could be any valid props key
 ```
                 <Counter key={count.id} id={count.id} onD={this.handleDelete} value={count.count} selected={true} />)}
 ```
+# lesson 8 Updating the State
+## Raising events
+One thing here difficult to understand is that when set props event, only use the event name, without parameter. Only pass the parameter on the onClick event button, but still using arrow function. This is a pattern we should use most of the time.
+```
+    render() { 
+        return <div>
+            {this.state.counters.map(count => 
+                <Counter key={count.id} id={count.id} onDelete={this.handleDelete} value={count.count} selected={true} />)}
+           </div>
+    }
+
+    handleDelete = (counterId) => {
+        const newCounters = this.state.counters.filter(counter => counter.id !== counterId);
+        this.setState({counters: newCounters});
+    };
+```
+### For component `Counter`, we should raise the event using arrow function:
+```
+<button onClick={() => this.props.onDelete(this.props.id)} className="btn btn-danger btn-sm m-2">Delete</button>
+```
+### Another improvement we could do is to encapsulate all the props data in one object, actually the object `counter` contains all the data (event functions also included) to be passed to the target component, so use `counter` object directly.
+Change bellow code:
+```
+    render() { 
+        return <div>
+            {this.state.counters.map(count => 
+                <Counter 
+                    key={count.id} 
+                    id={count.id} 
+                    onDelete={this.handleDelete} 
+                    value={count.count} selected={true} 
+            />)}
+           </div>
+    }
+```
+To be:
+```
+    render() { 
+        return <div>
+            {this.state.counters.map(count => 
+                <Counter 
+                    key={count.id} 
+                    counter={count}
+                    onDelete={this.handleDelete}
+            />)}
+          </div>
+    }
+```
+When I do this, I made a mistake that I thought the counter object will also include the event `handleDelete`. So I can't actually access this event through `counter` props because event `handleDelete` resides in `Counters` component.
