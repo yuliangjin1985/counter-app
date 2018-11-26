@@ -270,4 +270,15 @@ class App extends Component {
   }
 ```
 # lesson 13 Stateless Functional Components
-## Lift counters to App component
+## Replace NavBar class with a stateless functional component
+```
+import React, { Component } from 'react';
+
+const NavBar = (props) => {
+    return (  
+        <nav className="navbar navbar-light bg-light">
+            <a className="navbar-brand" href="#">Navbar <span className="badge badge-pill badge-secondary">{props.length}</span></a>
+        </nav> );
+}
+export default NavBar;
+```
