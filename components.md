@@ -174,3 +174,54 @@ class Counter extends Component {
      }
 }
 ```
+# lesson 10 Remove the Local State
+## Controlled component
+A controlled component has no own state, it receives all the data through `props` form the parent component, and it raises an event whenever the data needs to be changed. In this sense, the controlled component is entirely controlled by its parent.
+```
+   render() { 
+        return <div>
+            <button className="btn btn-primary btn-sm m-2" 
+                onClick={this.handleReset}>Reset
+            </button>
+            {this.state.counters.map(count => 
+                <Counter 
+                    key={count.id} 
+                    counter={count}
+                    onDelete={this.handleDelete}
+                    onIncrement={this.handleIncrement}
+            />)};
+           </div>
+    }
+
+    handleIncrement = (counter) => {
+        const counters = [...this.state.counters];
+        const index = counters.indexOf(counter);
+        counters[index] = { ...counter};
+        counters[index].count++;
+        this.setState({counters});
+    }
+```
+### Update one object of the array
+ + Create a new array with every object cloned
+ + Find the index of the target object
+ + Clone a new object and assign it to the new array
+ + Update the new object
+ + Update the state with new object array
+### About updating object of array
+Array clone, the new array actually has the same objects as the old objects, no new object is created.
+```const counters = [...this.state.counters];```
+But object clone will create a new object with the same attributes and values as the old object.
+```const newCounter = {...counter}``` This will always create a new object.
+And we can see the old, new object this way:
+```
+    handleIncrement = (counter) => {
+        const counters = [...this.state.counters];
+        const index = counters.indexOf(counter);
+        const newCounter = {...counter};
+        counters[index] = newCounter;
+        newCounter.count++;
+        this.setState({counters});
+        console.log("ole object", counter);
+        console.log("new object", newCounter);
+    }
+```
