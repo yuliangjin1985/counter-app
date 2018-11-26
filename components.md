@@ -271,6 +271,8 @@ class App extends Component {
 ```
 # lesson 13 Stateless Functional Components
 ## Replace NavBar class with a stateless functional component
+Just use `sfc` to create a stateless functional component.
+**React will automatically pass the props as the parameter into the functional component.**
 ```
 import React, { Component } from 'react';
 
@@ -281,4 +283,57 @@ const NavBar = (props) => {
         </nav> );
 }
 export default NavBar;
+```
+# lesson 14 Destructuring Arguments
+## Replace NavBar class with a stateless functional component
+We can omit `props` using destructruing arguments. In bellow code, `const NavBar = ({length}) => {}`, react will pass props into this functional component, but in the method, we accept the `props` with an object `{length}`, and here is what amazing happens.
+```
+const NavBar = ({length}) => {
+    return (  
+        <nav className="navbar navbar-light bg-light">
+            <a className="navbar-brand" href="#">Counter <span className="badge badge-pill badge-secondary">{length}</span></a>
+        </nav> );
+}
+```
+Similarly, we can make the change to `Counters` this way:
+```
+class Counters extends Component {
+    render() { 
+        return <div>
+            <button className="btn btn-primary btn-sm m-2" 
+                onClick={this.props.onReset}>Reset
+            </button>
+            {this.props.counters.map(count => 
+                <Counter 
+                    key={count.id} 
+                    counter={count}
+                    onDelete={this.props.onDelete}
+                    onIncrement={this.props.onIncrement}
+            />)}
+           </div>
+    }
+}
+ 
+export default Counters;
+```
+**To**
+```
+class Counters extends Component {
+
+    render() { 
+        const {counters, onReset, onDelete, onIncrement} = this.props;
+        return <div>
+            <button className="btn btn-primary btn-sm m-2" 
+                onClick={onReset}>Reset
+            </button>
+            {counters.map(count => 
+                <Counter 
+                    key={count.id} 
+                    counter={count}
+                    onDelete={onDelete}
+                    onIncrement={onIncrement}
+            />)}
+           </div>
+    }
+}
 ```
