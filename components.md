@@ -251,4 +251,23 @@ class App extends Component {
 }
 ```
 # lesson 12 Lifting the State Up
-## Modify new layout
+## Lift counters to App component
+```
+  render() {
+    return (
+      <React.Fragment>
+       <NavBar length={this.state.counters.filter(c => c.count > 0).length}/> 
+       <main className="container">
+        <Counters 
+          counters={this.state.counters}
+          onReset={this.handleReset}
+          onDelete={this.handleDelete}
+          onIncrement={this.handleIncrement}
+        />
+       </main>
+      </React.Fragment>
+    );
+  }
+```
+# lesson 13 Stateless Functional Components
+## Lift counters to App component
