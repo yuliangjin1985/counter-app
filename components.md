@@ -225,3 +225,30 @@ And we can see the old, new object this way:
         console.log("new object", newCounter);
     }
 ```
+# lesson 11 Multi Components in Sync
+## Modify new layout
+If we want to show counters data in the `NavBar`, which is not a child component for `Counters` component, in this case we have to lift the state.
+{App: {
+    NavBar,
+    Counters: [
+        Counter,
+        Counter,
+        ...
+    ]}
+}
+```
+class App extends Component {
+  render() {
+    return (
+      <React.Fragment>
+       <NavBar /> 
+       <main role="main" className="container">
+        <Counters />
+       </main>
+      </React.Fragment>
+    );
+  }
+}
+```
+# lesson 12 Lifting the State Up
+## Modify new layout
