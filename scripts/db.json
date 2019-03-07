@@ -1,0 +1,113 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "id": 2
+    },
+    {
+      "id": 3
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 11,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "title": "json-server",
+      "author": "update",
+      "id": 12
+    },
+    {
+      "title": "json-server",
+      "author": "update",
+      "id": 13
+    }
+  ],
+  "counters": [
+    {
+      "id": 1,
+      "count": 0
+    },
+    {
+      "id": 2,
+      "count": 0
+    },
+    {
+      "id": 3,
+      "count": 0
+    },
+    {
+      "id": 4,
+      "count": 0
+    },
+    {
+      "id": 5,
+      "count": 0
+    },
+    {
+      "id": 6,
+      "count": 0
+    },
+    {
+      "id": 7,
+      "count": 0
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "task": "create more todos"
+    },
+    {
+      "task": "study",
+      "id": 2
+    },
+    {
+      "task": "run",
+      "id": 3
+    },
+    {
+      "task": "swim",
+      "id": 4
+    },
+    {
+      "task": "eat",
+      "id": 5
+    },
+    {
+      "task": "drink",
+      "id": 6
+    },
+    {
+      "task": "dance",
+      "id": 7
+    },
+    {
+      "task": "celebrate",
+      "id": 8
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -16,9 +16,7 @@ export class Display extends React.Component {
 
     return (
       <div>
-        <h2 className="display-1 text-center" style="color:#069">
-          {content}{" "}
-        </h2>
+        <h2 className="display-1 text-center">{content} </h2>
         <div style={rowStyle}>
           <button disabled={previousDisabled} onClick={handlePrev}>
             Previous
