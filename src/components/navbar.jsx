@@ -19,9 +19,6 @@ const NavBar = ({ length }) => {
           <Link className="nav-item nav-link active" to="/todos">
             Todos
           </Link>
-          <Link className="nav-item nav-link active" to="/redux">
-            Redux
-          </Link>
         </div>
       </div>
     </nav>

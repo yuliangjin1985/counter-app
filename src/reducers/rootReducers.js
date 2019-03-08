@@ -3,7 +3,6 @@ import {
   REMOVE_TODO,
   LOAD_INITIALIZED_TODOS
 } from "../actions/todoActions";
-import { ADD_TEST } from "../actions/reduxActions";
 import {
   UPDATE_NEWS,
   FETCH_NEWS,
@@ -18,15 +17,7 @@ const initialState = {
 };
 
 export default function rootReduce(state = initialState, action) {
-  debugger;
   switch (action.type) {
-    case ADD_TEST:
-      let val = action.redux;
-      let oldState = { ...state };
-      return {
-        ...oldState,
-        redux: val
-      };
     case ADD_TODO:
       let newState = { ...state };
       newState.id++;
@@ -34,7 +25,6 @@ export default function rootReduce(state = initialState, action) {
         ...newState,
         todos: [...newState.todos, { task: action.task, id: newState.id }]
       };
-      // debugger;
       return temp;
     case REMOVE_TODO:
       const tempState = { ...state };
@@ -61,12 +51,6 @@ export default function rootReduce(state = initialState, action) {
         ...state,
         todos: action.todos
       };
-
-    // case FETCH_NEWS:
-    //   return {
-    //     ...state,
-    //     news: []
-    //   };
     default:
       return state;
   }

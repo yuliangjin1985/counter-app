@@ -1,3 +1,7 @@
+## enzyme
+
+`npm i --save-dev enzyme enzyme-adapter-react-16`
+
 ## Test Saga
 
 In the method parameters, declare the fetch, so it's easy to mock data from fetch call.

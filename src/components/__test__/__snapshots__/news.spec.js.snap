@@ -1,0 +1,391 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`News renders without crashing 1`] = `
+ShallowWrapper {
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <News
+    news={
+      Array [
+        Object {
+          "title": "fake news one",
+        },
+      ]
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "checkPropTypes": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateError": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): Object {
+    "instance": null,
+    "key": undefined,
+    "nodeType": "host",
+    "props": Object {
+      "children": Array [
+        <div>
+          <button
+            className="float-right"
+            onClick={[Function]}
+          >
+            CNN
+          </button>
+          <button
+            className="float-right"
+            onClick={[Function]}
+          >
+            BBC
+          </button>
+          <button
+            className="float-right"
+            onClick={[Function]}
+          >
+            BBC SPORT
+          </button>
+          <button
+            className="float-right"
+            onClick={[Function]}
+          >
+            ESPN
+          </button>
+          <hr />
+        </div>,
+        <div>
+          <div>
+            fake news one
+          </div>
+        </div>,
+      ],
+    },
+    "ref": null,
+    "rendered": Array [
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <button
+              className="float-right"
+              onClick={[Function]}
+            >
+              CNN
+            </button>,
+            <button
+              className="float-right"
+              onClick={[Function]}
+            >
+              BBC
+            </button>,
+            <button
+              className="float-right"
+              onClick={[Function]}
+            >
+              BBC SPORT
+            </button>,
+            <button
+              className="float-right"
+              onClick={[Function]}
+            >
+              ESPN
+            </button>,
+            <hr />,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "CNN",
+              "className": "float-right",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "CNN",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "BBC",
+              "className": "float-right",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "BBC",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "BBC SPORT",
+              "className": "float-right",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "BBC SPORT",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {
+              "children": "ESPN",
+              "className": "float-right",
+              "onClick": [Function],
+            },
+            "ref": null,
+            "rendered": "ESPN",
+            "type": "button",
+          },
+          Object {
+            "instance": null,
+            "key": undefined,
+            "nodeType": "host",
+            "props": Object {},
+            "ref": null,
+            "rendered": null,
+            "type": "hr",
+          },
+        ],
+        "type": "div",
+      },
+      Object {
+        "instance": null,
+        "key": undefined,
+        "nodeType": "host",
+        "props": Object {
+          "children": Array [
+            <div>
+              fake news one
+            </div>,
+          ],
+        },
+        "ref": null,
+        "rendered": Array [
+          Object {
+            "instance": null,
+            "key": "0",
+            "nodeType": "host",
+            "props": Object {
+              "children": "fake news one",
+            },
+            "ref": null,
+            "rendered": "fake news one",
+            "type": "div",
+          },
+        ],
+        "type": "div",
+      },
+    ],
+    "type": "div",
+  },
+  Symbol(enzyme.__nodes__): Array [
+    Object {
+      "instance": null,
+      "key": undefined,
+      "nodeType": "host",
+      "props": Object {
+        "children": Array [
+          <div>
+            <button
+              className="float-right"
+              onClick={[Function]}
+            >
+              CNN
+            </button>
+            <button
+              className="float-right"
+              onClick={[Function]}
+            >
+              BBC
+            </button>
+            <button
+              className="float-right"
+              onClick={[Function]}
+            >
+              BBC SPORT
+            </button>
+            <button
+              className="float-right"
+              onClick={[Function]}
+            >
+              ESPN
+            </button>
+            <hr />
+          </div>,
+          <div>
+            <div>
+              fake news one
+            </div>
+          </div>,
+        ],
+      },
+      "ref": null,
+      "rendered": Array [
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <button
+                className="float-right"
+                onClick={[Function]}
+              >
+                CNN
+              </button>,
+              <button
+                className="float-right"
+                onClick={[Function]}
+              >
+                BBC
+              </button>,
+              <button
+                className="float-right"
+                onClick={[Function]}
+              >
+                BBC SPORT
+              </button>,
+              <button
+                className="float-right"
+                onClick={[Function]}
+              >
+                ESPN
+              </button>,
+              <hr />,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "CNN",
+                "className": "float-right",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "CNN",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "BBC",
+                "className": "float-right",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "BBC",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "BBC SPORT",
+                "className": "float-right",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "BBC SPORT",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {
+                "children": "ESPN",
+                "className": "float-right",
+                "onClick": [Function],
+              },
+              "ref": null,
+              "rendered": "ESPN",
+              "type": "button",
+            },
+            Object {
+              "instance": null,
+              "key": undefined,
+              "nodeType": "host",
+              "props": Object {},
+              "ref": null,
+              "rendered": null,
+              "type": "hr",
+            },
+          ],
+          "type": "div",
+        },
+        Object {
+          "instance": null,
+          "key": undefined,
+          "nodeType": "host",
+          "props": Object {
+            "children": Array [
+              <div>
+                fake news one
+              </div>,
+            ],
+          },
+          "ref": null,
+          "rendered": Array [
+            Object {
+              "instance": null,
+              "key": "0",
+              "nodeType": "host",
+              "props": Object {
+                "children": "fake news one",
+              },
+              "ref": null,
+              "rendered": "fake news one",
+              "type": "div",
+            },
+          ],
+          "type": "div",
+        },
+      ],
+      "type": "div",
+    },
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+        "legacyContextMode": "parent",
+        "lifecycles": Object {
+          "componentDidUpdate": Object {
+            "onSetState": true,
+          },
+          "getChildContext": Object {
+            "calledByRenderer": false,
+          },
+          "getDerivedStateFromProps": true,
+          "getSnapshotBeforeUpdate": true,
+          "setState": Object {
+            "skipsComponentDidUpdateOnNullish": true,
+          },
+        },
+      },
+    },
+  },
+  Symbol(enzyme.__childContext__): null,
+}
+`;

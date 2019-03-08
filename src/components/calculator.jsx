@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Buttons } from "./buttons";
 import { Display } from "./display";
 import { Button } from "./button";
 
@@ -10,7 +9,6 @@ export class Calculator extends React.Component {
       operations: [],
       content: "",
       status: 0
-      //status, 0: initial, 2, in process, 3, show result
     };
   }
 
@@ -44,38 +42,6 @@ export class Calculator extends React.Component {
       }
     }
   };
-
-  // handleClick = e => {
-  //   const val = e.target.getAttribute("data-value");
-  //   switch (val) {
-  //     case "clear": {
-  //       this.setState({ content: "", status: 0 });
-  //       break;
-  //     }
-
-  //     case "equal": {
-  //       this.calculate();
-  //       break;
-  //     }
-
-  //     default: {
-  //       let { status } = this.state;
-  //       let newContent;
-  //       if (status === 3) {
-  //         newContent = val;
-  //       } else {
-  //         newContent = this.state.content;
-  //         newContent += val;
-  //       }
-  //       this.setState({
-  //         content: newContent,
-  //         numberDisabled: false,
-  //         operandDisabled: false,
-  //         status: 2
-  //       });
-  //     }
-  //   }
-  // };
 
   calculate = () => {
     const math = require("mathjs");
